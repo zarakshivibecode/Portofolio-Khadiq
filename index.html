@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khadiq Zarkasy — Portfolio Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- AUDIO PLAYER -->
+<div class="audio-player">
+  <button id="audioToggle" class="audio-btn" title="Toggle Music">
+    <span class="audio-icon">🔊</span>
+  </button>
+  <audio id="bgAudio" loop crossorigin="anonymous">
+    <source src="Interstellar Main Theme - Extra Extended - Soundtrack by  Hans Zimmer.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- LOADER SCREEN -->
+<div id="loader" class="loader-screen">
+  <div class="loader-content">
+    <div class="loader-tooltip">👋 Halo! I'm Khadiq Zarkasy, Web Developer from Purwokerto, Indonesia</div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="navbar">
+  <div class="nav-logo" onclick="goTo('home')">KZ</div>
+  <ul class="nav-links">
+    <li><a id="nav-home" onclick="goTo('home')" class="nav-link active"><span>Home</span><span class="dup">Home</span></a></li>
+    <li><a id="nav-about" onclick="goTo('about')" class="nav-link"><span>About</span><span class="dup">About</span></a></li>
+    <li><a id="nav-works" onclick="goTo('works')" class="nav-link"><span>Works</span><span class="dup">Works</span></a></li>
+    <li><a id="nav-contact" onclick="goTo('contact')" class="nav-link"><span>Contact</span><span class="dup">Contact</span></a></li>
+  </ul>
+  <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu">
+  <button class="mob-close" onclick="toggleMenu()">✕</button>
+  <ul class="mob-nav-list">
+    <li><div class="mob-nav-item" onclick="goTo('home');toggleMenu()">Home<span class="mob-plus">+</span></div></li>
+    <li><div class="mob-nav-item" onclick="goTo('about');toggleMenu()">About<span class="mob-plus">+</span></div></li>
+    <li><div class="mob-nav-item" onclick="goTo('works');toggleMenu()">Works<span class="mob-plus">+</span></div></li>
+    <li><div class="mob-nav-item" onclick="goTo('contact');toggleMenu()">Contact<span class="mob-plus">+</span></div></li>
+  </ul>
+</div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="blob-wrap">
+      <div class="blob">
+        <div class="blob-inner"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow" id="hEye">Purwokerto, Indonesia</div>
+        <div class="hero-title">
+          <div class="hero-line" id="hL1">Hi! i'm</div>
+          <div class="hero-line" id="hL2">Khadiq</div>
+          <div class="hero-line hero-line-muted" id="hL3">Zarkasy</div>
+        </div>
+        <div class="hero-scroll" id="hScroll">
+          <div class="scroll-indicator"></div>
+          <span>scroll</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXT REVEAL SECTION -->
+  <section class="section-reveal">
+    <div class="container">
+      <div class="reveal-wrapper">
+        <h2 class="reveal-heading" id="revealHead"></h2>
+        <p class="reveal-subtitle">Mahasiswa Informatika semester 2 dari Universitas Harapan Bangsa. Belajar web development, UI design, dan AI tools untuk membuat digital experiences yang keren.</p>
+        <button class="btn-cta" onclick="goTo('about')"><span>Tentang Gw →</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 1 -->
+  <div class="marquee-section">
+    <div class="marquee-track marquee-fwd">
+      <span class="marquee-item">Web Developer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">VibeCode <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">UI Designer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Web Developer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">VibeCode <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">UI Designer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Web Developer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">VibeCode <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">UI Designer <span class="marquee-dot">✿</span></span>
+    </div>
+  </div>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="section-about-preview">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image fu">
+          <div class="image-placeholder">KZ</div>
+          
+        </div>
+        <div class="about-content fu">
+          <div class="about-label">Siapa Gw?</div>
+          <h3 class="about-title">Mahasiswa Informatika &<br>Web Developer</h3>
+          <p class="about-desc">Semester 2 di Universitas Harapan Bangsa. Belajar web development dengan praktek langsung bikin project sendiri. Percaya cara terbaik belajar adalah dengan ngoding.</p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" data-target="2" data-suffix="+">0+</div>
+              <div class="stat-label">Proyek</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="4" data-suffix="+">0+</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section-services">
+    <div class="container">
+      <h2 class="section-title fu">Transforming ideas into digital experiences</h2>
+      <div class="services-list">
+        <div class="service-item fu">
+          <div class="service-num">01</div>
+          <div class="service-content">
+            <h4 class="service-name">Web Development</h4>
+            <p class="service-desc">Membangun website responsif dengan HTML, CSS, JavaScript. Clean code dan fokus pada user experience yang menyenangkan.</p>
+          </div>
+        </div>
+        <div class="service-item fu">
+          <div class="service-num">02</div>
+          <div class="service-content">
+            <h4 class="service-name">UI/UX Design</h4>
+            <p class="service-desc">Design interface modern dan intuitif pakai Figma. Fokus pada visual yang konsisten dan user journey yang smooth.</p>
+          </div>
+        </div>
+        <div class="service-item fu">
+          <div class="service-num">03</div>
+          <div class="service-content">
+            <h4 class="service-name">Game Development</h4>
+            <p class="service-desc">Membuat browser game interaktif dengan vanilla JavaScript. Dari konsep sampai visual yang modern dan engaging.</p>
+          </div>
+        </div>
+        <div class="service-item fu">
+          <div class="service-num">04</div>
+          <div class="service-content">
+            <h4 class="service-name">AI & VibeCode</h4>
+            <p class="service-desc">Memanfaatkan AI tools untuk development yang lebih cepat. Bukan copy-paste, tapi ngerti dan kontrol hasilnya.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORKS -->
+  <section class="section-works">
+    <div class="container">
+      <h2 class="section-title fu">Latest Projects & Work</h2>
+
+      <div class="work-card fu">
+        <div class="work-meta">
+          <span class="work-badge">Game</span>
+          <span class="work-badge">Personal</span>
+        </div>
+        <h3 class="work-title">Snack Game</h3>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <img src="https://picsum.photos/400/250?random=11" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=15" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=19" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=23" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=11" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=15" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=19" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=23" alt="Snack Game">
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card fu">
+        <div class="work-meta">
+          <span class="work-badge">App</span>
+          <span class="work-badge">Personal</span>
+        </div>
+        <h3 class="work-title">Music Player</h3>
+        <div class="carousel-container">
+          <div class="carousel-track carousel-reverse">
+            <img src="https://picsum.photos/400/250?random=42" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=46" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=50" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=54" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=42" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=46" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=50" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=54" alt="Music Player">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center fu">
+        <button class="btn-cta" onclick="goTo('works')"><span>Lihat Semua →</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section-experience">
+    <div class="container">
+      <h2 class="section-title fu">My Journey</h2>
+      <div class="experience-list">
+        <div class="exp-item fu">
+          <div class="exp-header">
+            <h4 class="exp-title">Universitas Harapan Bangsa</h4>
+            <span class="exp-period">2025 — Now</span>
+          </div>
+          <p class="exp-role">Mahasiswa Teknik Informatika</p>
+          <p class="exp-text">Membangun fondasi ilmu komputer. Aktif belajar dan buat project web dari nol.</p>
+        </div>
+        <div class="exp-item fu">
+          <div class="exp-header">
+            <h4 class="exp-title">Self-Learning & VibeCode</h4>
+            <span class="exp-period">2025 — Now</span>
+          </div>
+          <p class="exp-role">Independent Developer</p>
+          <p class="exp-text">Belajar lewat project real. Snack Game dan Music Player bukti hasil belajar gw.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 2 -->
+  <div class="marquee-section">
+    <div class="marquee-track marquee-rev">
+      <span class="marquee-item">Custom Web Experiences <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Self-Made Creations <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Driven by Passion <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Built with Code <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Custom Web Experiences <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Self-Made Creations <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Driven by Passion <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Built with Code <span class="marquee-dot">✿</span></span>
+    </div>
+  </div>
+
+</div><!-- /HOME PAGE -->
+
+<!-- ==================== ABOUT PAGE ==================== -->
+<div id="page-about" class="page">
+
+  <section class="section-about-hero">
+    <div class="container">
+      <div class="page-hero-title">
+        <h1 class="page-title" id="aphH1">About</h1>
+        <h2 class="page-subtitle" id="aphH2">Me</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track marquee-fwd">
+      <span class="marquee-item">Web Developer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">UI Designer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">VibeCode Dev <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Web Developer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">UI Designer <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">VibeCode Dev <span class="marquee-dot">✿</span></span>
+    </div>
+  </div>
+
+  <!-- BIO SECTION -->
+  <section class="section-bio">
+    <div class="container">
+      <div class="bio-grid">
+        <div class="bio-text">
+          <div class="bio-content" id="bioWords"></div>
+          <div class="bio-extra">
+            <p>Gw seorang <strong>Web Developer</strong> yang lagi bridge antara kreativitas dan code. Dari nulis HTML sampai bikin game—semuanya gw lakuin dengan cara gw sendiri.</p>
+            <p style="margin-top:1.5rem;">Aktif belajar <strong>web development fundamental</strong>, UI/UX design, dan AI prompting. Goal gw: bikin digital experiences yang nggak cuma works, tapi looks good juga.</p>
+          </div>
+        </div>
+        <div class="bio-image">
+          <div class="image-placeholder">KZ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="section-expertise">
+    <div class="container">
+      <h2 class="section-title fu">What I Can Do</h2>
+      <div class="expertise-grid">
+        <div class="expert-card fu">
+          <div class="expert-num">01</div>
+          <h4 class="expert-title">Web Development</h4>
+          <p class="expert-desc">Build responsive websites dengan HTML, CSS, JavaScript clean code. User-focused dan pixel-perfect design.</p>
+        </div>
+        <div class="expert-card fu">
+          <div class="expert-num">02</div>
+          <h4 class="expert-title">UI/UX Design</h4>
+          <p class="expert-desc">Design interface modern di Figma. Visual konsisten dengan user journey yang intuitive dan smooth.</p>
+        </div>
+        <div class="expert-card fu">
+          <div class="expert-num">03</div>
+          <h4 class="expert-title">AI & Tools</h4>
+          <p class="expert-desc">Leverage AI untuk develop lebih cepat. Strategic prompting, bukan blind copy-paste, tapi ngerti dan kontrol.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section-stats">
+    <div class="container">
+      <h2 class="section-title fu">Proven Progress</h2>
+      <p class="section-subtitle fu">Perjalanan belajar gw—kecil tapi konsisten, terus berkembang setiap hari.</p>
+      <div class="stats-large-grid">
+        <div class="stat-card fu">
+          <div class="stat-big" data-target="2" data-suffix="+">0+</div>
+          <div class="stat-desc">Project Completed</div>
+          <p class="stat-note">Game & Web App fully functional</p>
+        </div>
+        <div class="stat-card fu">
+          <div class="stat-big" data-target="4" data-suffix="+">0+</div>
+          <div class="stat-desc">Technologies</div>
+          <p class="stat-note">HTML, CSS, JavaScript, Python</p>
+        </div>
+        <div class="stat-card fu">
+          <div class="stat-big" data-target="2" data-suffix="">0</div>
+          <div class="stat-desc">Semester</div>
+          <p class="stat-note">Informatika di UHB Purwokerto</p>
+        </div>
+        <div class="stat-card fu">
+          <div class="stat-big" data-target="100" data-suffix="%">0%</div>
+          <div class="stat-desc">Learning Spirit</div>
+          <p class="stat-note">All-in sa bawat project</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section-tech">
+    <div class="container">
+      <h2 class="section-title fu">Technology Arsenal</h2>
+      <p class="section-subtitle fu">Tools dan tech yang gw pake untuk develop</p>
+      <div class="tech-grid">
+        <div class="tech-category fu">
+          <h4 class="tech-label">Languages</h4>
+          <div class="tech-chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Python</span>
+          </div>
+        </div>
+        <div class="tech-category fu">
+          <h4 class="tech-label">Tools & Deployment</h4>
+          <div class="tech-chips">
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">Vercel</span>
+          </div>
+        </div>
+        <div class="tech-category fu">
+          <h4 class="tech-label">Design</h4>
+          <div class="tech-chips">
+            <span class="chip">Figma</span>
+            <span class="chip">VS Code</span>
+          </div>
+        </div>
+        <div class="tech-category fu">
+          <h4 class="tech-label">Special Skills</h4>
+          <div class="tech-chips">
+            <span class="chip">AI Prompting</span>
+            <span class="chip">UI Design</span>
+            <span class="chip">VibeCode</span>
+          </div>
+        </div>
+        <div class="tech-category fu">
+          <h4 class="tech-label">Learning Now</h4>
+          <div class="tech-chips">
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="tech-category fu">
+          <h4 class="tech-label">Soft Skills</h4>
+          <div class="tech-chips">
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Creative Thinking</span>
+            <span class="chip">Self-Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="container text-center">
+      <h2 class="cta-title fu">Let's Build Something Cool</h2>
+      <p class="cta-subtitle fu">Terbuka untuk kolaborasi, project bareng, atau ngobrol soal web dev. Jangan ragu reach out!</p>
+      <button class="btn-cta" onclick="goTo('contact')"><span>Let's Connect →</span></button>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track marquee-rev">
+      <span class="marquee-item">Custom Web <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Self-Made <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Passion Driven <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Code Built <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Custom Web <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Self-Made <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Passion Driven <span class="marquee-dot">✿</span></span>
+      <span class="marquee-item">Code Built <span class="marquee-dot">✿</span></span>
+    </div>
+  </div>
+
+</div><!-- /ABOUT PAGE -->
+
+<!-- ==================== WORKS PAGE ==================== -->
+<div id="page-works" class="page">
+
+  <section class="section-works-hero">
+    <div class="container">
+      <div class="page-hero-title">
+        <h1 class="page-title" id="wphH1">My</h1>
+        <h2 class="page-subtitle" id="wphH2">Work</h2>
+      </div>
+      <p class="page-subtitle-text">Kumpulan project yang gw bikin — semua dibuat dengan tangan, kode, dan passion sendiri.</p>
+    </div>
+  </section>
+
+  <section class="section-works-list">
+    <div class="container">
+
+      <div class="work-detailed fu">
+        <div class="work-detail-meta">
+          <span class="work-badge">Game</span>
+          <span class="work-badge">Personal</span>
+          <span class="work-date">20 April 2026</span>
+        </div>
+        <h3 class="work-detail-title">Snack Game</h3>
+        <p class="work-detail-desc">Terinspirasi dari game Nokia jadul, tapi dengan tampilan modern dan smooth animations. Fully responsive, built dengan vanilla JavaScript tanpa library apapun.</p>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <img src="https://picsum.photos/400/250?random=11" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=15" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=19" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=27" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=11" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=15" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=19" alt="Snack Game">
+            <img src="https://picsum.photos/400/250?random=27" alt="Snack Game">
+          </div>
+        </div>
+      </div>
+
+      <div class="work-detailed fu">
+        <div class="work-detail-meta">
+          <span class="work-badge">Web App</span>
+          <span class="work-badge">Personal</span>
+          <span class="work-date">12 April 2026</span>
+        </div>
+        <h3 class="work-detail-title">Music Player</h3>
+        <p class="work-detail-desc">Music player Spotify-inspired dengan ability import lagu dari file explorer. Modern UI + Web Audio API browser native, zero dependencies.</p>
+        <div class="carousel-container">
+          <div class="carousel-track carousel-reverse">
+            <img src="https://picsum.photos/400/250?random=42" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=46" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=50" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=56" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=42" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=46" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=50" alt="Music Player">
+            <img src="https://picsum.photos/400/250?random=56" alt="Music Player">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /WORKS PAGE -->
+
+<!-- ==================== CONTACT PAGE ==================== -->
+<div id="page-contact" class="page">
+
+  <section class="section-contact">
+    <div class="container">
+      <div class="contact-header">
+        <h1 class="contact-title" id="contactH">Let's<br><span>Connect</span></h1>
+        <p class="contact-subtitle">Terbuka untuk kolaborasi, project bareng, atau sekadar ngobrol soal code. Jangan ragu reach out!</p>
+      </div>
+
+      <div class="contact-methods fu">
+        <a href="mailto:khadiqzarkasy16@gmail.com" class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div class="contact-info">
+            <div class="contact-name">Email</div>
+            <div class="contact-value">khadiqzarkasy16@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="https://wa.me/6281229410618" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">💬</span>
+          <div class="contact-info">
+            <div class="contact-name">WhatsApp</div>
+            <div class="contact-value">+62 812-2941-0618</div>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/zrk4sysy.docx" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">📸</span>
+          <div class="contact-info">
+            <div class="contact-name">Instagram</div>
+            <div class="contact-value">@zrk4sysy.docx</div>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/khadiq-zarkasy-968363391" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">💼</span>
+          <div class="contact-info">
+            <div class="contact-name">LinkedIn</div>
+            <div class="contact-value">Khadiq Zarkasy</div>
+          </div>
+        </a>
+
+        <a href="https://github.com/zarakshivibecode" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">🐙</span>
+          <div class="contact-info">
+            <div class="contact-name">GitHub</div>
+            <div class="contact-value">zarakshivibecode</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /CONTACT PAGE -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-group">
+          <h5 class="footer-label">Links</h5>
+          <ul class="footer-links">
+            <li><a onclick="goTo('home')"><span>Home</span><span class="dup">Home</span></a></li>
+            <li><a onclick="goTo('about')"><span>About</span><span class="dup">About</span></a></li>
+            <li><a onclick="goTo('works')"><span>Works</span><span class="dup">Works</span></a></li>
+            <li><a onclick="goTo('contact')"><span>Contact</span><span class="dup">Contact</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h5 class="footer-label">Socials</h5>
+          <ul class="footer-links">
+            <li><a href="mailto:khadiqzarkasy16@gmail.com"><span>Email</span><span class="dup">Email</span></a></li>
+            <li><a href="https://www.instagram.com/zrk4sysy.docx" target="_blank"><span>Instagram</span><span class="dup">Instagram</span></a></li>
+            <li><a href="https://wa.me/6281229410618" target="_blank"><span>WhatsApp</span><span class="dup">WhatsApp</span></a></li>
+            <li><a href="https://github.com/zarakshivibecode" target="_blank"><span>GitHub</span><span class="dup">GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/khadiq-zarkasy-968363391" target="_blank"><span>LinkedIn</span><span class="dup">LinkedIn</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-right">
+        <div class="footer-group">
+          <h5 class="footer-label">Local Time</h5>
+          <div class="footer-time" id="footerTime">WIB --:--:--</div>
+        </div>
+        <div class="footer-group">
+          <div class="footer-version"><span>Version 2026</span><span class="dup">Version 2026</span></div>
+        </div>
+        <div class="footer-contacts">
+          <a href="tel:+6281229410618" class="footer-link"><span>+62 812-2941-0618</span><span class="dup">+62 812-2941-0618</span></a>
+          <a href="mailto:khadiqzarkasy16@gmail.com" class="footer-link"><span>khadiqzarkasy16@gmail.com</span><span class="dup">khadiqzarkasy16@gmail.com</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-signature" id="footerBig">♾️♾️♾️</div>
+
+    <div class="footer-bottom">
+      <span>Made with ❤️ by Khadiq</span>
+      <span>Purwokerto, Banyumas © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
